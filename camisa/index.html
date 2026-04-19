@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peitas de Time | Loja Oficial</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="header-principal">
+        <button class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="logo">
+            <a href="index.html">
+                <h1>Peitas de<span> Time</span></h1>
+            </a>
+        </div>
+
+        <nav class="menu-navegacao">
+            <ul>
+                <li><a href="clubessulamericanos.html">Clubes Americanos</a></li>
+                <li><a href="clubeseuropeus.html">Clubes Europeus</a></li>
+                <li><a href="seleções.html">Seleções Nacionais</a></li>
+                <li><a href="outros.html">Outros</a></li>
+            </ul>
+        </nav>
+
+        <div class="spacer-mobile"></div>
+    </header>
+
+    <main>
+        <section class="carrossel">
+            <div class="carousel-container">
+                <div class="carousel-slide" id="carousel">
+                    <div class="card-produto">...</div>
+                    <div class="card-produto">...</div>
+                    <div class="card-produto">...</div>
+                </div>
+            </div>
+            <div class="slide active"
+                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://img.olx.com.br/images/37/372653269169201.jpg');">
+                <div class="banner-conteudo">
+                    <h2>Seleções Nacionais</h2>
+                    <a href="seleções.html" class="btn-ver-pecas">Ver as Peças</a>
+                </div>
+            </div>
+
+            <div class="slide"
+                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.pexels.com/photos/18256095/pexels-photo-18256095/free-photo-of-homem-segurando-holding-cabide.jpeg');">
+                <div class="banner-conteudo">
+                    <h2>Clubes Europeus</h2>
+                    <a href="clubeseuropeus.html" class="btn-ver-pecas">Ver as Peças</a>
+                </div>
+            </div>
+            <div class="slide"
+                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://agenciauva.net/wp-content/uploads/2024/11/compramos-sua-camisa.jpg');">
+                <div class="banner-conteudo">
+                    <h2>Clubes Sul-Americanos</h2>
+                    <a href="clubessulamericanos.html" class="btn-ver-pecas">Ver as Peças</a>
+                </div>
+            </div>
+
+            <div class="slide"
+                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://acdn-us.mitiendanube.com/stores/002/265/580/products/terceira-camisa-al-nassr-23-24-nike-masculina-cor-branca-02-212c2e87fa42b923f817031007781639-1024-1024.webp');">
+                <div class="banner-conteudo">
+                    <h2>Outros</h2>
+                    <a href="outros.html" class="btn-ver-pecas">Ver as Peças</a>
+                </div>
+            </div>
+
+            <button class="prev" onclick="mudarSlide(-1)">&#10094;</button>
+            <button class="next" onclick="mudarSlide(1)">&#10095;</button>
+        </section>
+    </main>
+    <script>
+        // Lógica do Menu Lateral
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menuNav = document.querySelector('.menu-navegacao');
+
+        menuToggle.addEventListener('click', () => {
+            menuNav.classList.toggle('active');
+        });
+
+        // Previne o comportamento padrão dos links de navegação
+        document.querySelectorAll('.menu-navegacao a[href="#"]').forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+            });
+        });
+
+        let currentSlide = 0;
+        const carrossel = document.querySelector('.carrossel');
+        const slides = carrossel.querySelectorAll('.slide');
+
+        function mostrarSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            currentSlide = (index + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        function mudarSlide(direcao) {
+            mostrarSlide(currentSlide + direcao);
+        }
+
+        // Troca automática a cada 5 segundos
+        setInterval(() => mudarSlide(1), 3000);
+    </script>
+    <section class="vitrine-produtos">
+        <h2 class="titulo-sessao">Novidades no Estoque</h2>
+
+        <div class="cards-container" id="lista-produtos">
+
+            <div class="card-produto">
+                <div class="card-imagem">
+                    <img src="https://acdn-us.mitiendanube.com/stores/002/322/390/products/camisa-flamengo-away-feminina1-abbf09eaf5e4be087717473399705457-1024-1024.webp"
+                        alt="Camisa Flamengo">
+                </div>
+                <div class="card-info">
+                    <h3>Flamengo Away 24/25</h3>
+                    <p class="preco">R$ 160,00</p>
+                    <a href="produto.html?nome=Flamengo Away 24/25&preco=160,00&img=https://acdn-us.mitiendanube.com/stores/002/322/390/products/camisa-flamengo-away-feminina1-abbf09eaf5e4be087717473399705457-1024-1024.webp"
+                        class="btn-comprar">Comprar Agora</a>
+                </div>
+            </div>
+
+            <div class="card-produto">
+                <div class="card-imagem">
+                    <img src="https://acdn-us.mitiendanube.com/stores/003/147/909/products/c779d886-ee151f49913fdb7ef517152797066716-1024-1024.webp"
+                        alt="Real Madrid Home">
+                </div>
+                <div class="card-info">
+                    <h3>Real Madrid Home 24/25</h3>
+                    <p class="preco">R$ 160,00</p>
+                    <a href="produto.html?nome=Real Madrid Home 24/25&preco=160,00&img=https://acdn-us.mitiendanube.com/stores/003/147/909/products/c779d886-ee151f49913fdb7ef517152797066716-1024-1024.webp"
+                        class="btn-comprar">Comprar Agora</a>
+                </div>
+            </div>
+
+            <div class="card-produto">
+                <div class="card-imagem">
+                    <img src="https://acdn-us.mitiendanube.com/stores/001/409/577/products/kit-infantil-manchester-city-home-azul-puma-23-24-111-51e577e6d101ef7c1a16870963916458-1024-1024-37918aafac0586ee9c16896203486451-480-0.webp"
+                        alt="Manchester City">
+                </div>
+                <div class="card-info">
+                    <h3>Man. City Home 24/25</h3>
+                    <p class="preco">R$ 160,00</p>
+                    <a href="produto.html?nome=Man. City Home 24/25&preco=160,00&img=https://acdn-us.mitiendanube.com/stores/001/409/577/products/kit-infantil-manchester-city-home-azul-puma-23-24-111-51e577e6d101ef7c1a16870963916458-1024-1024-37918aafac0586ee9c16896203486451-480-0.webp"
+                        class="btn-comprar">Comprar Agora</a>
+                </div>
+            </div>
+
+            <div class="card-produto">
+                <div class="card-imagem">
+                    <img src="https://acdn-us.mitiendanube.com/stores/002/536/162/products/camisa-inter-miami-24-25-home-torcedor-masculino-adidas-preto-imagem1-jpg-52be5b3e229a5499ab17097554614429-640-0.webp"
+                        alt="Inter Miami">
+                </div>
+                <div class="card-info">
+                    <h3>Inter Miami Home 24/25</h3>
+                    <p class="preco">R$ 160,00</p>
+                    <a href="produto.html?nome=Inter Miami Home 24/25&preco=160,00&img=https://acdn-us.mitiendanube.com/stores/002/536/162/products/camisa-inter-miami-24-25-home-torcedor-masculino-adidas-preto-imagem1-jpg-52be5b3e229a5499ab17097554614429-640-0.webp"
+                        class="btn-comprar">Comprar Agora</a>
+                </div>
+            </div>
+
+            <div class="card-produto">
+                <div class="card-imagem">
+                    <img src="https://acdn-us.mitiendanube.com/stores/001/409/577/products/terceira-camisa-al-nassr-iii-third-24-25-adidas-branco-e-dourado-masculina-torcedor-futebol-authentic-oficial-liga-saudita-cr7-mane-cristiano-ronaldo-6-c5e0a22e7ca3606e0517301451979439-640-0.webp"
+                        alt="Al Nassr">
+                </div>
+                <div class="card-info">
+                    <h3>Al Nassr III 24/25</h3>
+                    <p class="preco">R$ 160,00</p>
+                    <a href="produto.html?nome=São Paulo Home 24/25&preco=160,00&img=https://acdn-us.mitiendanube.com/stores/001/409/577/products/terceira-camisa-al-nassr-iii-third-24-25-adidas-branco-e-dourado-masculina-torcedor-futebol-authentic-oficial-liga-saudita-cr7-mane-cristiano-ronaldo-6-c5e0a22e7ca3606e0517301451979439-640-0.webp"
+                        class="btn-comprar">Comprar Agora</a>
+                </div>
+            </div>
+
+            <div class="card-produto">
+                <div class="card-imagem">
+                    <img src="https://img.olx.com.br/images/52/525394451019429.jpg" alt="Camisa São Paulo">
+                </div>
+                <div class="card-info">
+                    <h3>São Paulo Home 24/25</h3>
+                    <p class="preco">R$ 160,00</p>
+                    <a href="produto.html?nome=São Paulo Home 24/25&preco=160,00&img=https://img.olx.com.br/images/52/525394451019429.jpg"
+                        class="btn-comprar">Comprar Agora</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <script>
+        window.onload = function () {
+            const lista = document.getElementById('lista-produtos');
+
+            if (lista) {
+                // Duplica o conteúdo para o loop infinito
+                lista.innerHTML += lista.innerHTML;
+
+                let scrollLeft = 0;
+                const speed = 1; // Ajuste aqui (0.5 para mais lento e liso, 1.5 para mais rápido)
+
+                function render() {
+                    scrollLeft += speed;
+
+                    // Se chegou na metade, reseta sem que ninguém perceba
+                    if (scrollLeft >= lista.scrollWidth / 2) {
+                        scrollLeft = 0;
+                    }
+
+                    lista.scrollLeft = scrollLeft;
+
+                    // Chama o próximo quadro da animação (60 quadros por segundo)
+                    requestAnimationFrame(render);
+                }
+
+                // Inicia a animação fluida
+                requestAnimationFrame(render);
+            }
+        };
+    </script>
+    <div class="divisor-onda">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <defs>
+                <linearGradient id="meuDegrade" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#e63946; stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#1a1a1a; stop-opacity:1" />
+                </linearGradient>
+            </defs>
+
+            <path fill="url(#meuDegrade)" fill-opacity="1"
+                d="M0,128L26.7,128C53.3,128,107,128,160,144C213.3,160,267,192,320,224C373.3,256,427,288,480,304C533.3,320,587,320,640,309.3C693.3,299,747,277,800,250.7C853.3,224,907,192,960,165.3C1013.3,139,1067,117,1120,122.7C1173.3,128,1227,160,1280,197.3C1333.3,235,1387,277,1413,298.7L1440,320L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z">
+            </path>
+        </svg>
+        <section class="como-comprar-meio">
+            <div class="container-info">
+                <div class="titulo-secao">
+                    <h2>Como Garantir seu <span>Manto</span></h2>
+                    <p></p>
+
+                    <div class="passos-grid">
+                        <div class="card-passo">
+                            <div class="icone-circulo"><i class="fa-solid fa-shirt"></i></div>
+                            <h4>Escolha o Manto</h4>
+                            <p>Navegue pela loja e selecione o modelo e o tamanho ideal para você.</p>
+                        </div>
+
+                        <div class="card-passo">
+                            <div class="icone-circulo"><i class="fa-solid fa-pen-nib"></i></div>
+                            <h4>Personalize</h4>
+                            <p>Se desejar, adicione nome e número nas costas para deixar a peça única.</p>
+                        </div>
+
+                        <div class="card-passo">
+                            <div class="icone-circulo"><i class="fa-brands fa-whatsapp"></i></div>
+                            <h4>WhatsApp</h4>
+                            <p>Ao finalizar, você será levado ao nosso Zap para confirmar os detalhes.</p>
+                        </div>
+
+                        <div class="card-passo">
+                            <div class="icone-circulo"><i class="fa-solid fa-truck-fast"></i></div>
+                            <h4>Receba em Casa</h4>
+                            <p>Combine o pagamento e receba seu pedido com total segurança e rapidez.</p>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <defs>
+                <linearGradient id="degradeVertical" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#1a1a1a; stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#690707; stop-opacity:1" />
+                </linearGradient>
+            </defs>
+
+            <path fill="url(#degradeVertical)" fill-opacity="1"
+                d="M0,192L48,176C96,160,192,128,288,149.3C384,171,480,245,576,245.3C672,245,768,171,864,149.3C960,128,1056,160,1152,154.7C1248,149,1344,107,1392,85.3L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
+            </path>
+        </svg>
+
+        <div class="divisor-onda">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <defs>
+                    <linearGradient id="mdegradeVertical" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#690707; stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#000000; stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <path fill="url(#mdegradeVertical)" fill-opacity="1"
+                    d="M0,256L48,261.3C96,267,192,277,288,282.7C384,288,480,288,576,250.7C672,213,768,139,864,133.3C960,128,1056,192,1152,229.3C1248,267,1344,277,1392,282.7L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                </path>
+            </svg>
+        </div>
+        <footer class="rodape-completo">
+            <div class="rodape-container">
+                <div class="rodape-coluna">
+                    <h3>Nossa História</h3>
+                    <p>A Peitas de Time nasceu da paixão pelo futebol. Trazemos os melhores mantos com qualidade premium
+                        para você vestir a sua paixão onde estiver.</p>
+                </div>
+
+                <div class="rodape-coluna">
+                    <h3>Departamentos</h3>
+                    <ul class="rodape-links">
+                        <li><a href="clubeseuropeus.html"><i class="fa-solid fa-chevron-right"></i> Clubes Europeus</a>
+                        </li>
+                        <li><a href="seleções.html"><i class="fa-solid fa-chevron-right"></i> Seleções Nacionais</a>
+                        </li>
+                        <li><a href="clubessulamericanos.html"><i class="fa-solid fa-chevron-right"></i> Clubes
+                                Sul-Americanos</a></li>
+                        <li><a href="outros.html"><i class="fa-solid fa-chevron-right"></i> Outros</a></li>
+                    </ul>
+                </div>
+
+                <div class="rodape-coluna">
+                    <h3>Fale Conosco</h3>
+                    <div class="contato-lista">
+                        <a href="https://wa.me/55329999758046" target="_blank" class="contato-item">
+                            <i class="fa-brands fa-whatsapp icone-zap"></i>
+                            <span>(32) 99997-58046</span>
+                        </a>
+                        <a href="https://instagram.com/artbullaa" target="_blank" class="contato-item">
+                            <i class="fa-brands fa-instagram icone-insta"></i>
+                            <span>@peitasdetime</span>
+                        </a>
+                        <div class="contato-item">
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>contato@peitasdetime.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="rodape-direitos">
+                <p>&copy; 2026 Peitas de Time - Todos os direitos reservados.</p>
+            </div>
+        </footer>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="display: block;">
+            <defs>
+                <linearGradient id="degrade_peitas_topo" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#000000; stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#e63946; stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <path fill="url(#degrade_peitas_topo)" fill-opacity="1"
+                d="M0,128L48,160C96,192,192,256,288,240C384,224,480,128,576,112C672,96,768,160,864,165.3C960,171,1056,117,1152,117.3C1248,117,1344,171,1392,197.3L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
+            </path>
+        </svg>
+
+</body>
+</body>
+<div id="preloader">
+    <div class="loader"></div>
+
+
+</div>
+
+</html>

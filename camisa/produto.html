@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peitas de Time | Loja Oficial</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Scroll suave para quando clicar nos links do menu */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header-principal">
+        <button class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+ <div class="logo">
+    <a href="index.html">
+        <h1>Peitas de<span> Time</span></h1>
+    </a>
+</div>
+
+        <nav class="menu-navegacao">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="clubessulamericanos.html">Clubes Sul-Americanos</a></li>
+                <li><a href="clubeseuropeus.html">Clubes Europeus</a></li>
+                <li><a href="seleções.html">Seleções Nacionais</a></li>
+                <li><a href="outros.html">Outros</a></li>
+            </ul>
+        </nav>
+
+        <div class="spacer-mobile"></div>
+    </header>
+<main class="produto-pagina">
+    <div class="container-flex">
+        <div class="foto-grande">
+            <div class="moldura-foto">
+                <img id="img-dinamica" src="" alt="Camisa">
+            </div>
+        </div>
+
+        <div class="produto-detalhe">
+            <div class="info-compra">
+                <h1 id="titulo-dinamico">Brasil Home Copa</h1>
+                <p class="preco-grande">R$ <span id="preco-dinamico">160,00</span></p>
+            </div>
+
+            <div class="divisor-info"></div>
+
+            <div class="opcao-customizar">
+                <label class="container-checkbox">
+                    <input type="checkbox" id="check-customizar" onclick="toggleCustomizacao()">
+                    <span class="checkmark"></span>
+                    Personalizar (+ R$ 20,00)
+                </label>
+                <div id="campos-custom">
+    <input type="text" id="nome-personalizado" placeholder="Nome">
+    <input type="number" id="numero-personalizado" placeholder="Nº">
+</div>
+            </div>
+
+            <div class="selecao-tamanho-container">
+                <label>Escolha o Tamanho:</label>
+                <div class="selecao-tamanho">
+                    <button type="button" class="btn-tam">P</button>
+                    <button type="button" class="btn-tam">M</button>
+                    <button type="button" class="btn-tam">G</button>
+                    <button type="button" class="btn-tam">GG</button>
+                </div>
+            </div>
+
+            <div class="campo-endereco">
+                <label>Endereço de Entrega:</label>
+                <input type="text" id="endereco-input" placeholder="Rua, Número, Bairro - Cidade">
+            </div>
+
+            <button onclick="enviarWhatsApp()" class="btn-whats">
+    <i class="fa-brands fa-whatsapp"></i> Finalizar no WhatsApp
+</button>
+        </div>
+    </div>
+</main>
+<script src="script.js"></script>
+<body>
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+</body>
+</html>
